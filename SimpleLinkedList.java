@@ -1,16 +1,18 @@
-/*
-SimpleLinkedList.java
+/**
+   SimpleLinkedList.java
+   
+   Implementation of a very basic generic singly-linked list structure
+   
+   Jim Teresco, The College of Saint Rose, CSC 523, Summer 2014
+   Updated for CSIS 210, Siena College, Fall 2016, Fall 2018
+   
+   Based on previous implementations from
+   CSC 136, Williams College, COMSC 211, Mount Holyoke College, and CSC
+   501, The College of Saint Rose
 
-Implementation of a very simple singly-linked list structure using 
-Java 1.5 generics
-
-Jim Teresco, The College of Saint Rose, CSC 523, Summer 2014
-Updated for CSIS 210, Siena College, Fall 2016
-
-Based on previous implementations from
-CSC 136, Williams College, COMSC 211, Mount Holyoke College, and CSC
-501, The College of Saint Rose
- */
+   @author Jim Teresco
+   @version Fall 2019
+*/
 
 import java.util.Iterator;
 
@@ -90,8 +92,6 @@ Simple singly-linked list structure's iterator.
 class SimpleListIterator<E> implements java.util.Iterator<E> {
     /** Reference to currently considered element within list */
     protected SimpleListNode<E> current;
-    /** The head of list for reset */
-    protected SimpleListNode<E> head;
 
     /**
     Construct an iterator that traverses list beginning at t.
@@ -100,8 +100,7 @@ class SimpleListIterator<E> implements java.util.Iterator<E> {
     @param t The first element of list to be traversed.
      */
     public SimpleListIterator(SimpleListNode<E> t) {
-        head = t;
-        current = head;
+        current = t;
     }
 
     /**
